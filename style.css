@@ -1,0 +1,129 @@
+
+*, html, header, body, img{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul, ol, li, a {
+    text-decoration: none;
+    list-style: none;
+    height: auto;
+}
+
+.flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+/* Configuração de cores*/ 
+.ColorAzul {
+    color: #38B6FF;
+}
+
+.ColorCinza {
+    color: #7E7E7E;
+}
+
+.ColorBranco {
+    color: white;
+}
+
+.ColorPreto {
+    color: black;
+}
+
+.Background {
+    background-color: rgb(56, 182, 255, 59%);
+}
+
+/*fim*/ 
+/* Inicio header site*/
+header {
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid black;
+}
+
+.logo {
+    width: 50%;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.logo img {
+    width: 250px;
+    height: 60px;
+}
+
+#menu-principal {
+    width: 50%;
+    height: 100%;
+}
+
+.menu-trigger {
+    position: absolute;
+    z-index: 1000;
+    width: 35px;
+    height: 35px;
+    opacity: 0;
+    cursor: pointer;
+    left: 3px;
+    top: 20px;
+}
+
+#menu-principal .menu-lines {
+    position: absolute;
+    z-index: 999;
+    width: 35px;
+    height: 35px;
+    left: 3px;
+    top: 20px;
+}
+
+#menu-principal .menu-lines span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(56, 182, 255, 59%);
+    border-radius: 3px;
+    transition: all ease .2s;
+}
+
+#menu-principal .menu-trigger:checked ~ .menu-lines span {
+    background-color: rgba(255, 255, 255, 0.59);
+}
+
+#menu-principal .menu-trigger:checked ~ .menu-lines span:nth-child(1) {
+    transform-origin: 0% 0%;
+    transform: rotate(45deg) scaleX(1.25);
+}
+#menu-principal .menu-trigger:checked ~ .menu-lines span:nth-child(2) {
+    opacity: 0;
+}
+#menu-principal .menu-trigger:checked ~ .menu-lines span:nth-child(3) {
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg) scaleX(1.25);
+}
+
+#menu-principal ul {
+    position: absolute;
+    z-index: 997;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #38B6FF;
+    height: calc(100vh - 100px);
+    padding-top:100px;
+    margin-left: -100%;
+    transition: all ease-in .2s;
+    text-align: center;
+}
+
+#menu-principal .menu-trigger:checked ~ ul {
+    margin-left: 0;
+}
